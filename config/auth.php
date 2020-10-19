@@ -40,12 +40,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+       
+        
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+            
+        ],
+        
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+       
     ],
 
     /*
@@ -70,6 +83,17 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+
+        'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Student::class,
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',

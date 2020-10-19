@@ -2,23 +2,25 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
-class User extends Authenticatable implements MustVerifyEmail
+//use Spatie\Permission\Traits\HasRoles;
+class Student extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable, HasRoles;
-
+    use Notifiable ;
+    protected $guard = 'student';
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'nim'
     ];
-  
+
+    protected $table = 'student';
     /**
      * The attributes that should be hidden for arrays.
      *
